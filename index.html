@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <style type="text/tailwindcss">
         @layer utilities {
             .hamburger-active div:nth-child(1) {
@@ -19,192 +19,240 @@
             }
         }
         body {
-            @apply overflow-x-hidden bg-gray-900;
+            @apply bg-gray-900;
         }
     </style>
 </head>
-<body class="w-screen">
-    <!-- Header -->
-    <header class="fixed w-full bg-gray-800/80 backdrop-blur-sm shadow-lg z-50">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="flex items-center justify-between py-4">
-                <div class="text-2xl font-bold text-blue-400">SAKIB</div>
-                
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-button" class="md:hidden flex flex-col space-y-1">
-                    <div class="w-6 h-0.5 bg-gray-300 transition-all duration-300"></div>
-                    <div class="w-6 h-0.5 bg-gray-300 transition-all duration-300"></div>
-                    <div class="w-6 h-0.5 bg-gray-300 transition-all duration-300"></div>
-                </button>
+<body>
+    <div class="relative">
+        <!-- Header -->
+        <header class="fixed w-full bg-gray-800/80 backdrop-blur-sm shadow-lg z-50">
+            <nav class="max-w-7xl mx-auto px-4 sm:px-6">
+                <div class="flex items-center justify-between py-4">
+                    <div class="text-2xl font-bold text-blue-400">SAKIB</div>
+                    <button id="mobile-menu-button" class="md:hidden flex flex-col space-y-1" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="w-6 h-0.5 bg-gray-300 transition-all duration-300"></div>
+                        <div class="w-6 h-0.5 bg-gray-300 transition-all duration-300"></div>
+                        <div class="w-6 h-0.5 bg-gray-300 transition-all duration-300"></div>
+                    </button>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-gray-300 hover:text-blue-400 transition">Home</a>
-                    <a href="#about" class="nav-link text-gray-300 hover:text-blue-400 transition">About</a>
-                    <a href="#skills" class="nav-link text-gray-300 hover:text-blue-400 transition">Skills</a>
-                </div>
-            </div>
-
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4">
-                <div class="flex flex-col space-y-4">
-                    <a href="#home" class="nav-link text-gray-300 hover:text-blue-400 transition">Home</a>
-                    <a href="#about" class="nav-link text-gray-300 hover:text-blue-400 transition">About</a>
-                    <a href="#skills" class="nav-link text-gray-300 hover:text-blue-400 transition">Skills</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen pt-20 flex items-center bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
-                <div class="w-full md:w-1/2">
-                    <span class="text-blue-400 tracking-widest">HELLO!</span>
-                    <h1 class="text-6xl font-bold text-white mb-4">
-                        I'm <span class="text-blue-400">Mahmud Ali Sakib</span>
-                    </h1>
-                    <p class="text-2xl text-gray-400 mb-8">
-                        A Frontend Web Developer
-                    </p>
-                </div>
-                <div class="w-full md:w-1/2 flex justify-center">
-                    <img src="img/me.png" alt="Profile" class="rounded-lg shadow-xl w-full max-w-md object-cover ring-2 ring-blue-500/20" />
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 class="text-6xl font-bold text-center mb-12 text-blue-400">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                <div class="w-full md:w-1/3 flex justify-center">
-                    <img src="img/me.png" alt="About" class="rounded-lg shadow-xl w-full max-w-sm object-cover ring-2 ring-blue-500/20" />
-                </div>
-                <div class="w-full md:w-2/3">
-                    <ul class="space-y-4 text-white text-xl">
-                      <li>
-                        <span class="font-bold">Name:</span>
-                        <span>Mahmud Ali Sakib</span>
-                      </li>
-                      <li>
-                        <span class="font-bold">Date of birth:</span>
-                        <span>December 05, 2002</span>
-                      </li>
-                      <li>
-                        <span class="font-bold">Address:</span>
-                        <span>Khulna, Bangladesh</span>
-                      </li>
-                      <li>
-                        <span class="font-bold">Email:</span>
-                        <span>mahmudalisakib@gmail.com</span>
-                      </li>
-                      <li>
-                        <span class="font-bold">Phone:</span>
-                        <span>+880 1719-100344</span>
-                      </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <h2 class="text-6xl font-bold text-center mb-12 text-blue-400">Skills</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition border border-gray-700">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-200">HTML5</h3>
-                    <div class="w-full bg-gray-700 rounded-full h-2.5">
-                        <div class="bg-blue-500 h-2.5 rounded-full w-0 skill-bar" data-width="95"></div>
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="nav-link text-gray-300 hover:text-blue-400 transition">Home</a>
+                        <a href="#about" class="nav-link text-gray-300 hover:text-blue-400 transition">About</a>
+                        <a href="#skills" class="nav-link text-gray-300 hover:text-blue-400 transition">Skills</a>
+                        <a href="#projects" class="nav-link text-gray-300 hover:text-blue-400 transition">Projects</a>
                     </div>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition border border-gray-700">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-200">CSS3</h3>
-                    <div class="w-full bg-gray-700 rounded-full h-2.5">
-                        <div class="bg-blue-500 h-2.5 rounded-full w-0 skill-bar" data-width="90"></div>
+
+                <!-- Mobile Navigation -->
+                <div id="mobile-menu" class="md:hidden hidden pb-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="#home" class="nav-link text-gray-300 hover:text-blue-400 transition">Home</a>
+                        <a href="#about" class="nav-link text-gray-300 hover:text-blue-400 transition">About</a>
+                        <a href="#skills" class="nav-link text-gray-300 hover:text-blue-400 transition">Skills</a>
+                        <a href="#projects" class="nav-link text-gray-300 hover:text-blue-400 transition">Projects</a>
                     </div>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition border border-gray-700">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-200">Tailwind CSS</h3>
-                    <div class="w-full bg-gray-700 rounded-full h-2.5">
-                        <div class="bg-blue-500 h-2.5 rounded-full w-0 skill-bar" data-width="85"></div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen pt-20 flex items-center bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+                    <div class="w-full md:w-1/2">
+                        <span class="text-blue-400 tracking-widest">HELLO!</span>
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+                            I'm <span class="text-blue-400">Mahmud Ali Sakib</span>
+                        </h1>
+                        <p class="text-xl sm:text-2xl text-gray-400 mb-8">
+                            A Frontend Web Developer
+                        </p>
                     </div>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition border border-gray-700">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-200">JavaScript</h3>
-                    <div class="w-full bg-gray-700 rounded-full h-2.5">
-                        <div class="bg-blue-500 h-2.5 rounded-full w-0 skill-bar" data-width="80"></div>
-                    </div>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition border border-gray-700">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-200">React</h3>
-                    <div class="w-full bg-gray-700 rounded-full h-2.5">
-                        <div class="bg-blue-500 h-2.5 rounded-full w-0 skill-bar" data-width="75"></div>
+                    <div class="w-full md:w-1/2 flex justify-center">
+                        <img src="img/me.png" alt="Profile" class="rounded-lg shadow-xl w-full max-w-md object-cover ring-2 ring-blue-500/20" />
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-8 border-t border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <p>&copy; 2025 SAKIB. All rights reserved.</p>
-        </div>
-    </footer>
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-12 text-blue-400">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+                    <div class="w-full md:w-1/3 flex justify-center">
+                        <img src="img/me.png" alt="About" class="rounded-lg shadow-xl w-full max-w-sm object-cover ring-2 ring-blue-500/20" />
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <ul class="space-y-4 text-white text-lg sm:text-xl">
+                            <li class="flex gap-2">
+                                <span class="font-bold min-w-24">Name:</span>
+                                <span>Mahmud Ali Sakib</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="font-bold min-w-24">Date of birth:</span>
+                                <span>December 05, 2002</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="font-bold min-w-24">Address:</span>
+                                <span>Khulna, Bangladesh</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="font-bold min-w-24">Email:</span>
+                                <span>mahmudalisakib@gmail.com</span>
+                            </li>
+                            <li class="flex gap-2">
+                                <span class="font-bold min-w-24">Phone:</span>
+                                <span>+880 1719-100344</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-40 bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-12 text-blue-400">Skills</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-200">HTML5</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-500 h-2.5 rounded-full w-0 skill-bar" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-200">CSS3</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-500 h-2.5 rounded-full w-0 skill-bar" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-200">Tailwind CSS</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-500 h-2.5 rounded-full w-0 skill-bar" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-200">JavaScript</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-500 h-2.5 rounded-full w-0 skill-bar" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition border border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-200">React</h3>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5">
+                            <div class="bg-blue-500 h-2.5 rounded-full w-0 skill-bar" data-width="75"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-12 text-blue-400">Projects</h2>
+                <div class="carousel w-full rounded-xl">
+                    <div id="slide1" class="carousel-item relative w-full">
+                        <img src="img/Screenshot (38).png" alt="Project 1" class="w-full h-auto object-cover" />
+                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            <a href="#slide4" class=" text-2xl ">❮</a>
+                            <a href="#slide2" class=" text-2xl ">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide2" class="carousel-item relative w-full">
+                        <img src="img/Screenshot (39).png" class="w-full" />
+                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            <a href="#slide1" class=" text-2xl ">❮</a>
+                            <a href="#slide3" class=" text-2xl ">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide3" class="carousel-item relative w-full">
+                        <img src="img/Screenshot (40).png" class="w-full" />
+                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            <a href="#slide2" class=" text-2xl ">❮</a>
+                            <a href="#slide4" class=" text-2xl ">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide4" class="carousel-item relative w-full">
+                        <img src="img/Screenshot (41).png" class="w-full" />
+                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            <a href="#slide3" class=" text-2xl ">❮</a>
+                            <a href="#slide1" class=" text-2xl ">❯</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-gray-300 py-8 border-t border-gray-700">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+                <p>&copy; 2025 SAKIB. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
 
     <script>
-        // Mobile Menu Toggle
+
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
             mobileMenu.classList.toggle('hidden');
             mobileMenuButton.classList.toggle('hamburger-active');
         });
 
-        // Smooth Scrolling
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-                targetSection.scrollIntoView({ behavior: 'smooth' });
                 
-                // Close mobile menu if open
-                mobileMenu.classList.add('hidden');
-                mobileMenuButton.classList.remove('hamburger-active');
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.classList.remove('hamburger-active');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                }
             });
         });
 
-        // Animate skill bars on scroll
         function animateSkillBars() {
             const skillBars = document.querySelectorAll('.skill-bar');
             
             skillBars.forEach(bar => {
                 const width = bar.getAttribute('data-width');
-                bar.style.width = width + '%';
+                bar.style.width = '0%';
+                bar.offsetHeight;
                 bar.style.transition = 'width 1s ease-in-out';
+                bar.style.width = `${width}%`;
             });
         }
 
-        // Intersection Observer for skill bars animation
         const skillsSection = document.querySelector('#skills');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateSkillBars();
-                    observer.unobserve(entry.target);
-                }
+        if (skillsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateSkillBars();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                threshold: 0.5,
+                rootMargin: '0px'
             });
-        }, { threshold: 0.5 });
 
-        observer.observe(skillsSection);
+            observer.observe(skillsSection);
+        }
     </script>
 </body>
 </html>
